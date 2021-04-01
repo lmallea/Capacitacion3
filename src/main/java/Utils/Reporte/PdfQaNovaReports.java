@@ -322,7 +322,7 @@ public class PdfQaNovaReports {
             }
         } catch (IOException | DocumentException var3) {
             var3.printStackTrace();
-        } catch (InterruptedException e) {
+        }  catch (InterruptedException e) {
             e.printStackTrace();
         }
 

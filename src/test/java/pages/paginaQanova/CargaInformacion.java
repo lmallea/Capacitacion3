@@ -56,8 +56,7 @@ public class CargaInformacion {
 
     @FindBy(xpath = "//*[@id=\"imDPcal\"]/table/tbody/tr/td")
     List<WebElement> dia;
-
-
+    //METODO PARA INGRESAR PALABRAS EN EL CAMPO TEXTO
     public void ingresarTexto(String txt) {
         if (validarObjeto(texto, "Se valida campo de Texto")) {
             texto.sendKeys(txt);
@@ -65,7 +64,7 @@ public class CargaInformacion {
             System.err.println("No se visualiza el objeto");
         }
     }
-
+    //METODO PARA INGRESAR PALABRAS EN EL CAMPO CORREO
     public void ingresarCorreo(String mail) {
         if (validarObjeto(correo, "Se valida campo de correo")) {
             correo.sendKeys(mail);
@@ -73,7 +72,7 @@ public class CargaInformacion {
             System.err.println("No se visualiza el objeto");
         }
     }
-
+    //METODO PARA INGRESAR DATOS AL TEXTAREA
     public void ingresarArea(String dato) {
         if (validarObjeto(area, "Se valida TextArea")) {
             area.sendKeys(dato);
@@ -81,7 +80,7 @@ public class CargaInformacion {
             System.err.println("No se visualiza el objeto");
         }
     }
-
+    //METODO PARA INGRESAR LA FECHA
     public void ingresarFecha(String date) {
         if (validarObjeto(fecha, "Se valida campo de fecha")) {
             fecha.sendKeys(date);
@@ -89,7 +88,7 @@ public class CargaInformacion {
             System.err.println("No se visualiza el objeto");
         }
     }
-
+    //METODO PARA SELECCIONAR UN ELEMENTO DE LA LISTA
     public void ingresarLista() {
         if (validarObjeto(lista, "Se valida webelement para hacer lista")) {
             lista.click();
@@ -97,7 +96,7 @@ public class CargaInformacion {
             System.err.println("No se visualiza el objeto");
         }
     }
-
+    //METODO PARA
     public void seleccionar(String valor) {
         for (WebElement categorias : opciones) {
             if (categorias.getText().equals(valor)) {
@@ -105,7 +104,6 @@ public class CargaInformacion {
             }
         }
     }
-
     public void clickMultiple() {
         if (validarObjeto(seleccion3, "Se validan los checkbox")) {
             seleccion3.click();
@@ -113,20 +111,19 @@ public class CargaInformacion {
             System.err.println("No se visualiza el objeto");
         }
     }
-
     public void clickRadio() {
         if (validarObjeto(radio1, "Se validan RadioButton")) {
             radio1.click();
-            PdfQaNovaReports.addWebReportImage("visualizacion y rellenado","Se visualiza el despliegue de la pagina Carga de Informacion y se rellenan los Textbox Campo texto, campo mail, Campo Area de texto, Campo fecha, Campo Lista, Campo Seleccion Multiple; el Radiobutton Campo Radio Button y los botones Enviar y resetear", EstadoPrueba.PASSED, false);
+            PdfQaNovaReports.addWebReportImage("visualizacion y rellenado","Se visualiza el despliegue de la pagina Carga de Informacion y se rellenan los Textbox correspondientes;  se evidencia el Radiobutton y los botones ", EstadoPrueba.PASSED, false);
         } else {
             System.err.println("No se visualiza el objeto");
         }
     }
 
     public void clickEnviar() {
-        if (validarObjeto(enviar, "Se valida botn enviar")) {
+        if (validarObjeto(enviar, "Se valida boton enviar")) {
             enviar.click();
-            PdfQaNovaReports.addWebReportImage("clickEnviar","Luego de hacer click en el boton Enviar se despliga la pagina Matriz de informacion con el registro realizado. Se visualizan los botones Filter y Export CSV, ademas del Formulario con los datos: id, Campo_texto, Campo_mail, Campo_Area_de_Texto, Campo_Fec ha, Campo_Lista, Campo_Sleccion_Multiple y Campo_Radio_Button ",EstadoPrueba.PASSED,false);
+            PdfQaNovaReports.addWebReportImage("clickEnviar","Luego de hacer click en el boton Enviar se despliga la pagina Matriz de informacion con el registro realizado. Se visualizan los botones, ademas del Formulario con los datos ",EstadoPrueba.PASSED,false);
         } else {
             System.err.println("No se visualiza el objeto");
         }
@@ -146,7 +143,6 @@ public class CargaInformacion {
             }
         }
     }
-
 }
 
 

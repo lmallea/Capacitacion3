@@ -28,7 +28,7 @@ public class GuardarCorreos {
 
     @FindBy(xpath = "//*[@id=\"pluginAppObj_4_01_jtable\"]/div/table/tbody/tr[1]")
     private WebElement datos;
-
+    // METODO PARA INGRESAR A LA PAGINA MATRIZ DE INFORMACION
     public void clickMatriz() {
         if (validarObjeto(matriz, "Matriz")) {
             esperar(5);
@@ -37,7 +37,7 @@ public class GuardarCorreos {
             System.err.println("No se visualiza el objeto");
         }
     }
-
+    // METODO PARA ESCRIBIR EN EL TEXTBOX QUE APARECE ANTES DEL BOTON FILTRAR
     public void escribir(String buscar) {
         if (validarObjeto(lineaDeFiltrar, "ESCRIBIR")) {
             lineaDeFiltrar.sendKeys(buscar);
@@ -45,6 +45,7 @@ public class GuardarCorreos {
             System.err.println("No se visualiza el objeto");
         }
     }
+    // METODO PARA HACER CLICK EN FILTRAR
     public void enter() {
         if (validarObjeto(filtrar, "Filtrar")) {
             esperar(5);
@@ -53,6 +54,7 @@ public class GuardarCorreos {
             System.err.println("No se visualiza el objeto");
         }
     }
+    //METODO PARA RECUPERAR EL CORREO QUE APARE LUEGO DE FILTRAR
     public void recuperar() {
         if (validarObjeto(recuperarCorreo, "REecuperacion de correo")) {
             esperar(5);
@@ -63,6 +65,7 @@ public class GuardarCorreos {
             System.err.println("No se encontro el correo");
         }
     }
+    //METODO PARA GUARDAR TODOS LOS DATOS LUEGO DE FILTRAR
     public void guardarDatos(){
         if (validarObjeto(datos, "Guardar datos")) {
             esperar(5);

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Validaciones {
 
     public static boolean validarObjeto(WebElement elemento, String descripcionElemento) {
-        WebDriverWait espera = new WebDriverWait(DriverContext.getDriver(), Integer.valueOf(ReadProperties.readFromConfig("propiedades.properties").getProperty("tiempoEsperaElementos")));
+        WebDriverWait espera = new WebDriverWait(DriverContext.getDriver(),Integer.valueOf(ReadProperties.readFromConfig("propiedades.properties").getProperty("tiempoEsperaElementos")));
        // String identificador;
         try {
             espera.until(ExpectedConditions.visibilityOf(elemento));

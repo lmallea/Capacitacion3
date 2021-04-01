@@ -24,8 +24,6 @@ public class Archivo {
     @FindBy(id = "imObjectForm_1_submit")
     private WebElement btnEnvio;
 
-
-
     public void ingresarArchivo() {
         if (validarObjeto(cargar, "Se visualiza elemento cargar archivo")) {
             esperar(5);
