@@ -3,6 +3,7 @@ package pages.paginaQanova;
 import Utils.DriverContext;
 import Utils.Reporte.EstadoPrueba;
 import Utils.Reporte.PdfQaNovaReports;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -45,12 +46,13 @@ public class Incorrecto {
     public void ingresarUsuario(String usuario) {
         if (validarObjeto(lineaUsuario, "Ingresar ususario")) {
             lineaUsuario.sendKeys(usuario);
+            lineaUsuario.sendKeys(Keys.CONTROL + "A");
         } else {
             System.err.println("No se visualiza el objeto");
         }
     }
     //METODO PARA INGRESAR TU CONTRASENA INCORRECTA
-    public void ingresarClave(String clave) {
+   /*public void ingresarClave(String clave) {
         if (validarObjeto(lineaClave, "Ingresar clave")) {
             lineaClave.sendKeys(clave);
             PdfQaNovaReports.addWebReportImage("Ingresar Credenciales", "Se visualiza el llenado de los campos Usuario y Contrasena", EstadoPrueba.PASSED, false);
@@ -74,5 +76,5 @@ public class Incorrecto {
         System.out.println("" + text);
         String color = error.getCssValue("background-color");
         System.out.println("" + color);
-    }
+    }*/
 }

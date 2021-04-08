@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testSuites.testBaseDatos.BDatos" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-08T21:36:43" hostname="LAPTOP-BGPR9L6N" time="0.624">
+  <properties/>
+  <testcase name="probando2" classname="testSuites.testBaseDatos.BDatos" time="0.624"/>
+  <system-out><![CDATA[Campo_Mail:hola@gmail.com
+Combo Radio Button:
+Campo_Mail:hola@gmail.com
+Combo Radio Button:
+Campo_Mail:hola@gmail.com
+Combo Radio Button:
+Campo_Mail:hola@gmail.com
+Combo Radio Button:
+Campo_Mail:hola@gmail.com
+Combo Radio Button:
+Campo_Mail:qanova@gmail.com
+Combo Radio Button:cr 1
+Campo_Mail:pablo@gmail.com
+Combo Radio Button:cr 2
+Campo_Mail:mallea@gmail.com
+Combo Radio Button:cr 1
+Campo_Mail:123@gmail.com
+Combo Radio Button:cr 3
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

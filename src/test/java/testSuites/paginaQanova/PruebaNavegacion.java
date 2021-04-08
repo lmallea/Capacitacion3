@@ -18,7 +18,8 @@ public class PruebaNavegacion {
     }
     @AfterMethod
     public void tearDown() {
-        DriverContext.closeDriver();
+
+        //DriverContext.closeDriver();
     }
     @Test
     public void navegarEnLogin() {

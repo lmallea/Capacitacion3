@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
+import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +16,8 @@ public class DriverManager {
     private WebDriver webDriver;
     private File root = new File("driverNavegador");
     private String extensionDriver = "";
+
+
 
     public void resolveDriver(Navegador nav, String ambURL) {
         String os = System.getProperty("os.name").toLowerCase();

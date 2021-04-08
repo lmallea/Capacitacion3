@@ -40,9 +40,9 @@ public class Ingresar {
         Incorrecto incorrecto = new Incorrecto();
         incorrecto.ingresarPaginaQanova(name);
         incorrecto.ingresarUsuario(user);
-        incorrecto.ingresarClave(incorrect);
-        incorrecto.ingresarIncorrecto();
-        incorrecto.rescatarTC();
+        //incorrecto.ingresarClave(incorrect);
+        //incorrecto.ingresarIncorrecto();
+        //incorrecto.rescatarTC();
     }
     public void registroPagina() {
         NuevoIngreso nuevoIngreso = new NuevoIngreso();
