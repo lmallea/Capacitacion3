@@ -21,9 +21,11 @@ public class ConsultasDB {
                   System.out.println("Campo_Mail:" + rs.getString("Campo_Mail"));
                   System.out.println("Combo Radio Button:" + rs.getString("Combo_Radio_Button"));
               }
+            con.close();
            }catch (SQLException | ClassNotFoundException e){
            System.out.println(e.getMessage());
        }
+
    }
 
 }

@@ -23,12 +23,13 @@ public class TestDescargar {
     @AfterMethod
     public void tearDown() {
         DriverContext.closeDriver();
-        PdfQaNovaReports.closePDF();
+
     }
 
     @Test
     public void descargandoArchivo() {
         Descargando descargando = new Descargando();
         descargando.probarDescarga();
+        PdfQaNovaReports.closePDF();
     }
 }

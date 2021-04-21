@@ -9,6 +9,7 @@ import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
@@ -35,9 +36,9 @@ public class EnviarMail {
 
         Properties propiedades = new Properties();
         propiedades.put("mail.smtp.host","smtp.gmail.com");
-        propiedades.put("mail smtp starttls enable", "true");
+        propiedades.put("mail.smtp.starttls.enable", "true");
         propiedades.put("mail.smtp.port", 587);
-        propiedades.put("mail.smtp.port", "true");
+        propiedades.put("mail.smtp.auth", "true");
         Session sesion = Session.getDefaultInstance(propiedades);
         MimeMessage correo = new MimeMessage(sesion);
         try{
@@ -52,7 +53,7 @@ public class EnviarMail {
           transport.close();
 
         }catch(MessagingException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

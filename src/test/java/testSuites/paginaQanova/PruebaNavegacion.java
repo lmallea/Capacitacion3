@@ -19,7 +19,8 @@ public class PruebaNavegacion {
     @AfterMethod
     public void tearDown() {
 
-        //DriverContext.closeDriver();
+        DriverContext.closeDriver();
+
     }
     @Test
     public void navegarEnLogin() {
@@ -59,5 +60,11 @@ public class PruebaNavegacion {
         ingresar.introducir();
         ingresar.rellenar();
         ingresar.envioDeCorreo();
+    }
+    @Test
+    public void ejecutandoLogins() throws Exception {
+            Ingresar ingresar = new Ingresar();
+            ingresar.login1();
+            PdfQaNovaReports.closePDF();
     }
 }

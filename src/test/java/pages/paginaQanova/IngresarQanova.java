@@ -45,6 +45,7 @@ public class IngresarQanova {
     // METODO PARA INGRESAR EL USUARIO EN EL TEXTBOX CORRESPONDIENTE
     public void ingresarUsuario(String usuario) {
         if (validarObjeto(lineaUsuario, "Campo de usuario")) {
+            lineaUsuario.clear();
             lineaUsuario.sendKeys(usuario);
         } else {
             PdfQaNovaReports.addWebReportImage("ingresarUsuario", "No se visualiza el Campo Usuario", EstadoPrueba.FAILED, true);
@@ -54,6 +55,7 @@ public class IngresarQanova {
     // METODO PARA INGRESAR LA CLAVE EN EL TEXTBOX CORRESPONDIENTE
     public void ingresarClave(String clave) {
         if (validarObjeto(lineaClave, "Campo de Password")) {
+            lineaClave.clear();
             lineaClave.sendKeys(clave);
             PdfQaNovaReports.addWebReportImage("Ingresar Credenciales", "Se visualiza el llenado de los campos Usuario y Contrasena", EstadoPrueba.PASSED, false);
         } else {

@@ -1,8 +1,6 @@
 package basesDatos;
 
-import Utils.DriverContext;
-import Utils.ReadProperties;
-import org.testng.annotations.Test;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,9 +8,7 @@ import java.sql.SQLException;
 
 
 public class Conexion {
-    //String url = ReadProperties.readFromConfig("pruebaqanova.properties").getProperty("hostQA");
     private static Connection con = null;
-
     public static Connection conectarMySQL() throws ClassNotFoundException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

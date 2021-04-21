@@ -1,7 +1,19 @@
 package testClases.pruebaQanova;
 
+import Utils.DriverContext;
 import Utils.ReadProperties;
+import Utils.Reporte.EstadoPrueba;
+import Utils.Reporte.PdfQaNovaReports;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import pages.paginaQanova.*;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 public class Ingresar {
     String user = ReadProperties.readFromConfig("propiedades.properties").getProperty("usuario");
@@ -91,6 +103,55 @@ public class Ingresar {
         guardarCorreos.enter();
         guardarCorreos.guardarDatos();
         enviarMail.recuperacion();
-        enviarMail.procesoDeEnvio(mail2,sms,clave,destinatario,message);
+        enviarMail.procesoDeEnvio(mail2,sms,message,clave,destinatario);
+    }
+    public void login()throws Exception{
+        String json = "";
+        String linea;
+        BufferedReader brr = new BufferedReader(new FileReader("usuarios.json"));
+        while ((linea = brr.readLine()) != null){
+            json += linea;
+        }
+        brr.close();
+        System.out.println(json);
+        Gson gson = new Gson();
+        Type listType = new TypeToken<ArrayList<Users>>(){}.getType();
+        ArrayList<Users> arrayDeJson = gson.fromJson(json, listType);
+        for (int i = 0; i < arrayDeJson.size(); i++){
+            IngresarQanova ingresarQanova = new IngresarQanova();
+            ingresarQanova.ingresarUsuario(arrayDeJson.get(i).nombre);
+            ingresarQanova.ingresarClave(arrayDeJson.get(i).clave);
+            System.out.println(arrayDeJson.get(i).nombre + "\n");
+            System.out.println(arrayDeJson.get(i).clave + "\n");
+            PdfQaNovaReports.addWebReportImage("Ingresar Credenciales " + (i + 1), "Se visualiza el llenado de los campos Usuario y Contrasena", EstadoPrueba.PASSED, false);
+            ingresarQanova.ingresarDemo();
+            DriverContext.getDriver().navigate().back();
+        }
+    }
+    public void login1()throws Exception {
+        IngresarQanova ingresarQanova = new IngresarQanova();
+        String json1 = "";
+        String linea1;
+        BufferedReader brr = new BufferedReader(new FileReader("users.json"));
+        while ((linea1 = brr.readLine()) != null) {
+            json1 += linea1;
+        }
+        brr.close();
+        System.out.println(json1);
+        JsonObject jsonObject = new Gson().fromJson(json1,JsonObject.class);
+        JsonArray jsonUsers = jsonObject.getAsJsonArray("Usuarios");
+        String url = ReadProperties.readFromConfig("propiedades.properties").getProperty("url");
+        for (int i = 0; i < jsonUsers.size(); i++){
+            JsonObject jsonArreglo = (JsonObject) jsonUsers.get(i);
+            ingresarQanova.ingresarPaginaQanova(name);
+            usuario = jsonArreglo.get("nombre").getAsString();
+            ingresarQanova.ingresarUsuario(usuario);
+            clave = jsonArreglo.get("clave").getAsString();
+            ingresarQanova.ingresarClave(clave);
+            ingresarQanova.ingresarDemo();
+            ingresarQanova.validarProximaPagina(palabra);
+            DriverContext.getDriver().navigate().to(url);
+
+        }
     }
 }

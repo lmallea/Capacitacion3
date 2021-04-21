@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testSuites.paginaQanova.PruebaNavegacion" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-16T20:23:51" hostname="LAPTOP-BGPR9L6N" time="14.516">
+  <properties/>
+  <testcase name="ejecutandoLogins" classname="testSuites.paginaQanova.PruebaNavegacion" time="14.516"/>
+  <system-out><![CDATA[[PdfBciReport] createPDF
+driver context
+
+Sistema operativo ->windows 10
+
+Se selecciona Chrome
+ [    {      "nombre": "nvivas",      "clave": "qanova"    },    {      "nombre": "lvenegas",      "clave": "1234"    },    {      "nombre": "juanitoperez",      "clave": "qanova1234"    },    {      "nombre": "donqanova",      "clave": "123qanova"    },    {      "nombre": "srqanova",      "clave": "cualquiera123"    }  ]
+Se despliega correctamente el elemento "Campo de usuario
+Se despliega correctamente el elemento "Campo de Password
+nvivas
+
+qanova
+
+Se despliega correctamente el elemento "Boton Ingresar
+Se despliega correctamente el elemento "Campo de usuario
+Se despliega correctamente el elemento "Campo de Password
+lvenegas
+
+1234
+
+Se despliega correctamente el elemento "Boton Ingresar
+Se despliega correctamente el elemento "Campo de usuario
+Se despliega correctamente el elemento "Campo de Password
+juanitoperez
+
+qanova1234
+
+Se despliega correctamente el elemento "Boton Ingresar
+Se despliega correctamente el elemento "Campo de usuario
+Se despliega correctamente el elemento "Campo de Password
+donqanova
+
+123qanova
+
+Se despliega correctamente el elemento "Boton Ingresar
+Se despliega correctamente el elemento "Campo de usuario
+Se despliega correctamente el elemento "Campo de Password
+srqanova
+
+cualquiera123
+
+Se despliega correctamente el elemento "Boton Ingresar
+[PdfBciReport] closePDF
+[PdfBciReport] createTitlePage
+File: YFGDHLSMJSJFXXJ Not found
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 12654
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+abr. 16, 2021 4:23:49 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

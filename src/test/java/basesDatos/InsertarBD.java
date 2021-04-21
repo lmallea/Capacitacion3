@@ -16,10 +16,13 @@ public class InsertarBD {
             PreparedStatement pst = con.prepareStatement(consulta1);
             pst.executeUpdate();
             pst.executeUpdate(consulta);
+            con.close();
+            pst.close();
         }catch (ClassNotFoundException | SQLException e){
             System.out.println(e.getMessage());
 
         }
+
     }
 
 }
